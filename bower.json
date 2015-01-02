@@ -1,0 +1,8 @@
+{
+  "name": "myhstab_login",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "*",
+    "query-string": "~1.0.0"
+  }
+}
