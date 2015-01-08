@@ -30,11 +30,27 @@ module.exports = function (grunt) {
         },
         proxies: [
           {
-            context: ['/app'],
+            context: ['/local', '/dev'],
+            host: "wwwdev.internal.priorityhealth.com",
+            https: true,
+            port: 443,
+            changeOrigin: true,
+            rewrite: {
+              '^/local': '',
+              '^/dev': ''
+            }
+          },
+          {
+            context: ['/qa1', '/qa2', '/qa3'],
             host: "wwwtest.internal.priorityhealth.com",
             https: true,
             port: 443,
-            changeOrigin: true
+            changeOrigin: true,
+            rewrite: {
+              '^/qa1': '',
+              '^/qa2': '',
+              '^/qa3': ''
+            }
           }
         ]
       }
